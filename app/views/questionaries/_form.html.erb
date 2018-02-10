@@ -1,0 +1,32 @@
+<%= form_with(model: questionary, local: true) do |form| %>
+  <% if questionary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(questionary.errors.count, "error") %> prohibited this questionary from being saved:</h2>
+
+      <ul>
+      <% questionary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :"タイトル" %>
+    <%= form.text_area :title, id: :questionary_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"説明" %>
+    <%= form.text_area :description, id: :questionary_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"締め切り" %>
+    <%= form.datetime_select :deadline, id: :questionary_deadline %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

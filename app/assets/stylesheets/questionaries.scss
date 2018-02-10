@@ -1,0 +1,115 @@
+h1 {
+    color: #909090;
+    font-size: 32pt;
+    margin: 50px 50px;
+    text-align: left;
+}
+
+table {
+    color: darkgray;
+    font-size: 18pt;
+    margin: 20px 50px;
+}
+  
+table tr th {
+    background-color: #909090;
+    color: #f6f6f6;
+    padding: 10px;
+    font-size: 18pt;
+    font-weight: bold;
+}
+  
+table tr td {
+    background-color: #f6f6f6;
+    color: #909090;
+    padding: 5px 10px;
+    font-size: 14pt;
+}
+
+.not_finished {
+    background-color: red;
+    color :white;
+}
+  
+.finished {
+    background-color: #909090;
+    color :#f6f6f6;
+}
+
+a {
+    color: #000;
+
+    &:visited {
+        color: #666;
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: #000;
+    }
+}
+
+#notice {
+    color: green;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px 7px 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+
+    h2 {
+        text-align: left;
+        font-weight: bold;
+        padding: 5px 5px 5px 15px;
+        font-size: 12px;
+        margin: -7px -7px 0;
+        background-color: #c00;
+        color: #fff;
+    }
+
+    ul li {
+        font-size: 12px;
+        list-style: square;
+    }
+}
+
+div.q_new {
+    border: solid 1px;
+    margin: 20px 50px;
+    padding: 20px 20px;
+}
+
+div.questionary {
+    border: solid 1px;
+    margin: 20px 50px;
+    padding: 20px 20px;
+    width: 500px;
+}
+
+div.items {
+    border: solid 1px;
+    margin: 20px 50px;
+    padding: 20px 20px;
+    width: 500px;
+}
+
+div.choice {
+    margin: 5px 20px;
+}
+
+.q_id {
+    color: #e49b9b;
+    font-size: 20pt;
+    margin: 50px 50px;
+    text-align: left;
+}
+

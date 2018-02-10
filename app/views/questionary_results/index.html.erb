@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>アンケート結果</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Result</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionaries.each do |questionary| %>
+      <tr>
+        <td><%= questionary.id %></td>
+        <td><%= questionary.title %></td>
+        <td> <a href="/questionary_results/<%=questionary.id %>">Show</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!-- <p style="margin: 0px 50px;font-size: 14pt"><%= link_to 'New Questionary Result', new_questionary_result_path %></p> -->
+<p style="margin: 0px 50px;font-size: 14pt"><%= link_to 'Back', questionaries_path %></p>
+

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h1><%=@questionary.title %></h1>
+ 
+<table>
+ <thead>
+   <tr>
+     <th>結果</th>
+   </tr>
+ </thead>
+
+  <tbody>
+    <%= @questionary_results.each do |result| %>
+      <tr>
+        <td><%= result.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<a href="/questionary_results/calc/<%=@questionary.id %>">Calc Data</a>
+<%= link_to 'Edit', edit_questionary_result_path(@questionary_result) %> |
+<%= link_to 'destroy', edit_questionary_result_path(@questionary_result) %> |
+
+<%= link_to 'Back', questionary_results_path %>
+

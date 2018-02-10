@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title"><%= @questionary.title %></h1>
+<p class="q_id">質問番号：<%= @questionary.id.to_s %></p>
+
+<div class="questionary">
+  <strong><p class="description" style="font-size: 20pt;color: black">
+    <%= @questionary.description %>
+  </p></strong>
+
+  <p class="deadline" style="text-align:right">
+    <strong>締め切り:</strong>
+    <%= @questionary.deadline.strftime("%Y年%m月%d日 %H時%M分") %>
+  </p>
+</div>
+
+<div class="items">
+
+  <%= form_tag(action:'show', id:@questionary.id) %>
+
+    <% count_items = 0 %>
+
+    <% @questionary.questionary_item.each do |item| %>
+      <strong><p class="q" style="font-size: 14pt"><%= item.content %></p></strong>
+        <% count_items += 1 %>
+        <% count_choices = 0 %>
+
+      <% item.questionary_choice.each do |choice| %>
+        <% count_choices += 1 %>
+
+        <div class="choice">
+          <label for="<%= count_items.to_s + '_' + count_choices.to_s %>">
+          <input type="radio" id="<%= count_items.to_s + '_' +count_choices.to_s %>"
+          name="r<%= count_items.to_s %>"
+          value="<%=choice.value %>"><%= choice.content %></label>
+        </div>
+      <% end %>
+      <hr>
+    <% end %>
+
+  <%=submit_tag '送信' %>
+  </from>
+
+</div>
+
+<p style="margin: 0px 50px;font-size: 14pt"><%= link_to '※アンケートに戻る', questionaries_path %></p>
+   

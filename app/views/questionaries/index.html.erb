@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<h1>17r606 アンケートサイト</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>期間</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% dx = 60 * 60 * 9 %>
+    <% @questionaries.each do |questionary| %>
+      <tr>
+        <td><%= questionary.title %></td>
+        <td><%= 'あと、約' + ((questionary.deadline - DateTime.now - dx) / (60*60*24)).to_i.to_s + '日' %>
+    <% if questionary.deadline - dx > DateTime.now then %>
+        <span class="not_finished">受付中</span>
+        </td>
+        <td><%= link_to 'アンケートを表示', questionary %></td>
+        <td><%= link_to '削除', questionary, method: :delete,data:{confirm:'Are you sure?'} %></td>
+        <td><%= link_to '編集', edit_questionary_path(questionary) %></td>
+　　<% else %>
+        <span class="finished">終了</span>
+        </td>
+        <td><%= link_to '削除', questionary, method: :delete,data:{confirm:'Are you sure?'} %></td>
+        <td><%= link_to '編集', edit_questionary_path(questionary) %></td>
+        <td></td>
+    <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<p style="margin: 0px 50px;font-size: 14pt"><%= link_to '※新しいアンケートを作る', new_questionary_path %></p>
+<br>
+<p style="margin: 0px 50px;font-size: 14pt"><%= link_to '※アンケート結果', questionary_results_path %></p>
