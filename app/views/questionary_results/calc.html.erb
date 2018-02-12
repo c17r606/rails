@@ -3,17 +3,5 @@
 以後、１つ目の選択肢を選んだす、２つ目の。。。。。。と続きます。
 １つしか回答がないものは、何も選択されていない（問題が保存しない）と考えてください </p>
 
-<table>
-<tr><th> 質問ID </th><th> 集計</th></tr>
-<% @calc.each do |ky, vl| %>
-   <tr><td><%= ky %></td><td>
-   <table><tr>
-   <% for v in vl %>
-      <td><%= v.to_i %></td>
-   <% end %>
-   </tr>
-</table>
-</td></tr>
-<% end %>
-</table>
 
+<p style="margin: 0px 50px;font-size: 14pt"><%= link_to '※アンケートに戻る', questionaries_path %></p>
